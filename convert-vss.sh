@@ -6,7 +6,7 @@ TEMPDIR=$(mktemp -d)
 
 mkdir -p ${EXPORT}/{sheets,shapes}
 
-for file in ${VSS_DIR}/*.vss
+for file in ${VSS_DIR}/*.vss*
 do
     name=$(echo ${file} | sed -e 's@\./VSS/@@' -e "s@'@@g" -e 's@ (US units)@@' -e 's@ @_@g' -e 's@\.vss@@')
     sheetname=$(echo "${name}" | sed 's@_@ @g')
